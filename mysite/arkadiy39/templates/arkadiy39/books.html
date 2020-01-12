@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BOOKS</title>
+</head>
+<body>
+<h1>Books</h1>
+	<div>
+		<a href="/arkadiy39/books/">Главная</a>
+		{%for rubric in rubrics%}
+			<a href="/arkadiy39/books/{{rubric.pk}}">{{rubric.name}}</a>
+		{%endfor%}
+	</div>
+<div>
+<table>
+<tr>
+<th>RUBRIC</th>
+<th>PUBDATE</th>
+<th>AUTHOR</th>
+<th>TITLE</th>
+<th>LINK</th>
+</tr>
+{%for book in books%}
+<tr>
+<td><a href="/arkadiy39/books/{{book.rubric.pk}}">{{book.rubric.name}}</a></td>
+<td>{{book.pubdate}}</td>
+<td>{{book.author}}</td>
+<td>{{book.title}}</td>
+<td><a href="{{book.link}}" target="_blank">{{book.link}}</a></td>
+
+</tr>
+{%endfor%}
+</table>
+</div>
+</body>
+</html>
