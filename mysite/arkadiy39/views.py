@@ -7,7 +7,7 @@ def index(request):
     return HttpResponse("Here will be books")
 
 
-def books(request):
+def books_index(request):
     books=Books.objects.order_by('-pubdate')
     rubrics=Rubric.objects.all()
     context={'books':books,'rubrics':rubrics}

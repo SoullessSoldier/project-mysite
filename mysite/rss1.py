@@ -64,6 +64,7 @@ def get_dicts(rubric_id,url,file):
             'CData contents: %r' % cd'''
         dic["CATEGORY"] = s.find('category',).text
         dic["DOWNLOADED"] = 0
+        dic["AUTHOR"]='NA'#на всяк случай, бывает, что строка с Автор: не находится
         arr=s.find('description',).text.split("\n")
 
         #Это работало бы с lxml
