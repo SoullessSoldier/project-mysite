@@ -8,7 +8,7 @@
 	<div><!--<a href="/arkadiy39/books/{{rubric.pk}}">{{rubric.name}}</a>-->
 		<a href="/arkadiy39/books/">Главная</a>
 		{%for rubric in rubrics%}
-			<a href="/arkadiy39/{%url 'books_by_rubric' rubric.pk%}">{{rubric.name}}</a>
+			<a href="{%url 'books_by_rubric' rubric.pk%}">{{rubric.name}}</a>
 		{%endfor%}
 	</div>
 <div>
