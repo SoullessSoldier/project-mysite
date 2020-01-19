@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>BOOKS</title>
-</head>
-<body>
-<h1>Books</h1>
-	<div><!--<a href="/arkadiy39/books/{{rubric.pk}}">{{rubric.name}}</a>-->
-		<!--<a href="/arkadiy39/books/">Главная</a>-->
-		<a href="{%url 'books_index'%}">Главная</a>
-		{%for rubric in rubrics%}
-			<a href="{%url 'books_by_rubric' rubric.pk%}">{{rubric.name}}</a>
-		{%endfor%}
-	</div>
+{%extends "layout/basic.html"%}
+{%block content%}
 <div>
 <table>
 <tr>
@@ -33,5 +21,4 @@
 {%endfor%}
 </table>
 </div>
-</body>
-</html>
+{%endblock%}

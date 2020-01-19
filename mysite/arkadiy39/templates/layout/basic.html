@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>{%block title%}Главная{%endblock%} - Список книг</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'books/books_style.css'%}">
+</head>
+<body>
+	<header>
+        <h1>Книги</h1>
+    </header>
+    <nav>
+		<table class="table-nav-top">
+        <tr>
+            <td><a href="{%url 'books_index'%}">Главная</a></td>
+            <td><a href="{%url 'add'%}">Добавить</a></td>
+        </tr>
+        </table>
+		<table class="table-nav">
+		<tr>
+        {%for rubric in rubrics%}
+            <td><a href="{%url 'books_by_rubric' rubric.pk%}">{{rubric.name}}</a></td>
+		{%endfor%}
+        </tr>
+        </table>
+	</nav>
+	<section>
+        {%block content%}
+		{%endblock%}
+    </section>
+</body>
+</html>
