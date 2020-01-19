@@ -1,0 +1,15 @@
+{%extends "layout/basic.html"%}
+{%block content%}
+<div>
+<table>
+<tr>
+<th>RESULT</th>
+</tr>
+{%for res in result%}
+<tr>
+<td>{{res}}</td>
+</tr>
+{%endfor%}
+</table>
+</div>
+{%endblock%}

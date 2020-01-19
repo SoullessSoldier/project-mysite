@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .models import Books,Rubric
 from .forms import BookForm
-
+import rss1
 # Create your views here.
 def index(request):
     return HttpResponse("Here will be books")
@@ -34,3 +34,7 @@ class BooksCreateView(CreateView):
         context['rubrics']=Rubric.objects.all()
         return context
 
+def books_load(request):
+    rubrics = Rubric.objects.all()
+    context={'rubrics':rubrics,'result':rss1.main()}
+    return render(request, 'arkadiy39/books_load.html', context)

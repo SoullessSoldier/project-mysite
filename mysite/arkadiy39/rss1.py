@@ -163,13 +163,13 @@ def main():
             if cursor.fetchone() is None:
                 post_row(conn,'arkadiy39_books',f)
                 #print(f"Новая книга: {f['TITLE']}")
-                arr_str.append("Новая книга: "+f['TITLE'])
+                arr_str.append("Новая книга: "+f[TITLE])
 
                 counter+=1
             '''for k, v in f.items():
                 print(f"{f['CRC32']}")'''
         #print(f'Добавлено {counter} записей')
-        arr_str.append("Добавлено "+str(counter)+" записей")
-    return arr_str
+        arr_str.append("Добавлено "+counter+" записей")
+        return arr_str
 if __name__ == "__main__":
     main()
