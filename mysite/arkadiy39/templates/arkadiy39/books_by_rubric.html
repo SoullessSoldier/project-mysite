@@ -5,12 +5,25 @@
 
 {%block content%}
 	<h2>Рубрика: {{current_rubric.name}}</h2>
-
+	<div>
+			<TABLE>
+				<tr>
+				<th>PubDate</th>
+				<th>Author</th>
+				<th>Title</th>
+				<th>Link</th>
+				</tr>
+				
 	{%for book in books%}
-		<div>
-			<h2>{{book.author}}</h2>
-			<p>{{book.title}}</p>
-			<p>{{book.pubdate}}</p>
-		</div>
+			<tr>
+				<td>{{book.pubdate}}</td>
+				<td>{{book.author}}</td>
+				<td>{{book.title}}</td>
+				<td><a href='{{book.link}}' target='_blank'>{{book.link}}</a></td>
+			</tr>	
+				
 	{%endfor%}
+				
+			</table>
+	</div>
 {%endblock%}

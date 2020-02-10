@@ -5,11 +5,15 @@
 <tr>
 <th>RESULT</th>
 </tr>
-{%for res in result%}
-<tr>
-<td>{{res}}</td>
-</tr>
-{%endfor%}
+{% for res in result %}
+    <tr>
+    {% if ' == ' in res %}
+        <td><b>{{res}}</b></td>
+    {% else %}
+        <td>{{res}}</td>
+    {% endif %}
+    </tr>
+{% endfor %}
 </table>
 </div>
 {%endblock%}
